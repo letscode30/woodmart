@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
+import Categories from "./pages/Categories";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 
-function App() {
+const App = () => {
+  const [cart, setCart] = useState([]);
+  const [warning, setWarning] = useState(false);
+
+  const handleClick = (tct) => {
+    console.log(tct);
+
+    let isPresent = false;
+    cart.forEach((product) => {
+      if (tct.id === product.id) isPresent = true;
+    });
+    if (isPresent) {
+      setWarning(true);
+
+      setTimeout(() => {
+        setWarning(false);
+      }, 2000);
+
+      return;
+    }
+
+    setCart([...cart, tct]);
+    console.log(cart);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar size={cart.length} />
+      <Routes>
+        <Route path="/" element={<Home handleClick={handleClick} />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/categories"
+          element={<Categories handleClick={handleClick} />}
+        />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route
+          path="/ProductDetail/:id"
+          element={<ProductDetail handleClick={handleClick} />}
+        />
+      </Routes>
+
+      <Footer />
+
+      {warning && <div>Item is already added in cart</div>}
+    </>
   );
-}
+};
 
 export default App;

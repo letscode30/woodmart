@@ -1,0 +1,22 @@
+
+.chr-card:hover{
+
+    height: 430px;
+        border: 2px solid white;
+        padding: 10px;
+        box-shadow: 5px 10px 8px #888888;
+        transition: width 2s;
+        transition-timing-function: ease-in-out;
+}
+
+.chr-card:hover>.desc-btn {
+
+    display: block;
+
+
+}
+
+.cat-img{
+
+    display: none;
+}

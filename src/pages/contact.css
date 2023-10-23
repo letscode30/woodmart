@@ -1,0 +1,17 @@
+
+.q-ans{
+
+    display: none;
+    color: rgb(141, 137, 137);
+    font-size: .8rem;
+}
+
+.q-list:hover{
+
+    color: #ED7D31;
+}
+
+.q-list:hover + .q-ans {
+
+    display: block;
+}

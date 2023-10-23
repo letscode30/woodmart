@@ -1,0 +1,318 @@
+
+
+
+.carousel-heading{
+
+    color: rgb(43, 39, 39);
+        text-align: left !important;
+        bottom: 450px;
+
+}
+
+.carousel-desc{
+
+    color: rgb(43, 39, 39);
+     text-align: left!important;
+     bottom: 230px;
+
+}
+
+.btn-shop{
+
+    position: relative;
+    bottom: 188px;
+   
+}
+
+.carousel-indicators{
+
+    bottom: 50px;
+}
+
+
+
+.carousel-caption {
+    animation: fadeInAnimation 1s ease-in;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.col-card:hover{
+
+  
+   height: 530px;
+   border: 2px solid white;
+padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+    transition: width 2s;
+transition-timing-function: ease-in-out;
+
+}
+
+.desc-btn{
+
+    display: none;
+}
+
+.col-card:hover > .desc-btn{
+
+    display: block;
+
+    
+}
+
+.cart-btn{
+
+    background-color: #ED7D31;
+    box-shadow: 5px 10px 8px #888888;
+    border: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    font-size: .9rem;
+}
+
+
+
+.cart-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.cart-btn span {
+    display: inline;
+    transition: 0.5s;
+}
+
+.cart-btn:hover span {
+    display: none;
+}
+
+.cart-btn:hover::after {
+    content: "\1F6D2";
+    margin-left: 10px;
+}
+
+
+
+
+
+
+.col-card {
+    transition: all 0.3s ease;
+}
+
+.col-card:hover {
+    transform: scale(1.1);
+}
+
+.desc-para{
+
+    font-size: .8rem!important;
+}
+
+::marker {
+
+    color: #ED7D31;
+}
+
+.vdo-pill{
+
+    background-image: url("orange.jpg");
+    height: 400px;
+    border-radius: 200px;  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.vdo-text{
+
+    position: relative;
+    top: 110px;
+}
+
+ 
+
+@media(max-width: 576px) {
+
+  .carousel-desc, .carousel-heading {
+
+        bottom: 0px!important;
+  }
+
+  .carousel-desc > h1{
+
+    font-size: .8rem;
+  }
+
+  .carousel-img, .heading-img{
+
+    display: none!important;
+  }
+
+  .carousel-heading > h6{
+
+    font-size: .8rem;
+    
+  }
+
+  .carousel-heading{
+
+     top: 5px;
+    padding: 4px;
+    margin-top: 5px;
+  }
+
+  .carousel-desc{
+
+         top: 52px;
+        padding: 4px;
+  }
+
+  .btn-shop{
+
+    display: none;
+  }
+
+  .arrow{
+
+    font-size: 2rem!important;
+    position: relative;
+    bottom: 25px;
+  }
+
+  .feat-pro{
+
+    font-size: 1.5rem!important;
+  }
+  
+  .table-data{
+
+    padding: 0px!important;
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .crt-table{
+
+    width: 100%;
+  }
+
+  .fa-times{
+
+    padding: 0px!important;
+  }
+
+  .cell-head > th{
+
+    font-size: .8rem;
+  }
+
+  .counter-box{
+
+    width: 19px!important;
+  }
+
+  .total {
+    font-size: .8rem!important;
+  }
+
+  
+}
+
+
+@media(max-width: 991.5px) and (min-width: 576px) {
+    
+
+    .btn-shop {
+    
+            position: relative;
+            bottom: 61px;
+        }           
+        
+        .carousel-desc {
+        
+                
+            
+            bottom: 89px;
+       
+             
+        
+        }   
+        
+    .carousel-heading {
+
+             bottom: 190px;
+
+    }
+
+        .arrow {
+    
+            font-size: 2rem !important;
+            position: relative;
+            bottom: 30px;
+        }
+
+        .products > img{
+
+            height: 200px!important;
+        }
+
+        .product-heading{
+
+            font-size: 1rem;
+        }
+
+        .cat-img{
+
+            display: block!important;
+        }
+                                                  
+}
+
+@media(width: 1024px)  {
+
+    .btn-shop {
+    
+            position: relative;
+            bottom: 103px;
+        }
+
+                  .carousel-desc {
+    
+        
+                      bottom: 141px
+        
+                  }    
+                  
+                  
+        .carousel-heading {
+    
+            bottom: 263px;
+    
+        }                                           
+
+}
+
+@media(width: 1440px){
+
+    .carousel-heading{
+
+      bottom: 382px;
+
+    }
+}
+
+
+
+
+ 
