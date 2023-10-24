@@ -7,10 +7,16 @@ import Contact from "./pages/Contact";
 import Categories from "./pages/Categories";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+import ProductSearch from "./components/ProductSearch";
+import { topCategories } from "./data";
 
 const App = () => {
   const [cart, setCart] = useState([]);
   const [warning, setWarning] = useState(false);
+
+  const [searchData, setSearchData] = useState("");
+
+  let [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleClick = (tct) => {
     console.log(tct);
@@ -33,9 +39,20 @@ const App = () => {
     console.log(cart);
   };
 
+  const handleSearch = (data) => {
+    if (!data) {
+      setFilteredProducts([]); // Return an empty array when no search text is provided
+    } else {
+      filteredProducts = topCategories.filter((product) =>
+        product.type.toLowerCase().includes(data.toLowerCase())
+      );
+      setFilteredProducts(filteredProducts);
+    }
+  };
+
   return (
     <>
-      <Navbar size={cart.length} />
+      <Navbar size={cart.length} onSearch={handleSearch} />
       <Routes>
         <Route path="/" element={<Home handleClick={handleClick} />} />
         <Route path="/contact" element={<Contact />} />
@@ -48,6 +65,16 @@ const App = () => {
           path="/ProductDetail/:id"
           element={<ProductDetail handleClick={handleClick} />}
         />
+
+        <Route
+          path="/productSearch"
+          element={<ProductSearch filteredProducts={filteredProducts} />}
+        />
+
+        {/* <Route
+          path="/ProductSearch/${filteredProducts}"
+          element={<ProductSearch />}
+        />*/}
       </Routes>
 
       <Footer />

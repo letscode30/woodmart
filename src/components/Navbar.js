@@ -1,8 +1,55 @@
 import React from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ProductSearch from "./ProductSearch";
+import { topCategories } from "../data";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ size }) => {
+const Navbar = ({ size, onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    navigate("/productSearch");
+    e.preventDefault();
+    onSearch(searchQuery);
+  };
+
+  /*
+  const [searchTerm, setSearchTerm] = useState("");
+
+  let [filteredProducts, setFilteredProducts] = useState([]);
+
+  const [found, setFound] = useState(false);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    console.log(searchTerm);
+  };
+
+  const handleInput = () => {
+    console.log("Search term:", searchTerm);
+
+    filteredProducts = topCategories.filter((product) =>
+      product.type.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    console.log(filteredProducts);
+    setFilteredProducts(filteredProducts);
+
+    if (filteredProducts.length === 0) {
+      setFound(false); // Set found as false if no products are found
+    } else {
+      setFound(true); // Set found as true if products are found
+    }
+  };*/
+
   return (
     <>
       <nav class="navbar navbar-expand-lg bg-body-tertiary ">
@@ -191,8 +238,15 @@ const Navbar = ({ size }) => {
                 type="search"
                 placeholder="Search for products"
                 aria-label="Search"
+                value={searchQuery}
+                onChange={handleInputChange}
               />
-              <button class="btn btn-outline-dark" type="submit">
+
+              <button
+                class="btn btn-outline-dark"
+                type="submit"
+                onClick={handleSubmit}
+              >
                 Search
               </button>
             </form>
