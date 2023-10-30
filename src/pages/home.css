@@ -250,6 +250,12 @@ transition-timing-function: ease-in-out;
     height: 60px!important;
   }
 
+  .col-card:hover {
+
+    width: 300px!important;
+    margin-left: 10px!important;
+  }
+
   
 }
 

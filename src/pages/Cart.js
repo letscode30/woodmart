@@ -31,7 +31,8 @@ const Cart = ({ cart, setCart }) => {
     return total + subtotal;
   }, 0);
 
-  console.log(grandTotal);
+  const updatedValue = grandTotal.toFixed(2);
+  console.log(updatedValue);
 
   // Iterate through each item in the cart to calculate the grand total
   /*cart.forEach((item) => {
@@ -149,7 +150,7 @@ const Cart = ({ cart, setCart }) => {
                   style={{ color: "#ED7D31", fontWeight: "bold" }}
                   className="total"
                 >
-                  ${grandTotal}
+                  ${updatedValue}
                 </td>
               </tr>
             </tbody>
