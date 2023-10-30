@@ -136,7 +136,7 @@ const Cart = ({ cart, setCart }) => {
               <tr className="">
                 <td className="fw-bold  total">SubTotal</td>
                 <td></td>
-                <td>${grandTotal}</td>
+                <td>${updatedValue}</td>
               </tr>
               <tr>
                 <td className="fw-bold total">Shipping</td>
