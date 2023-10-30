@@ -226,6 +226,30 @@ transition-timing-function: ease-in-out;
     font-size: .8rem!important;
   }
 
+  .order-btn{
+
+    padding: 10px 100px 10px 100px!important;
+  }
+
+  .data-field {
+      width: 315px!important;
+  }
+
+  .order-heading{
+
+    font-size: 1rem!important;
+  }
+
+  .count-box {
+      width: 30px!important;
+      height: 30px!important;
+  }
+
+  .logo-img{
+
+    height: 60px!important;
+  }
+
   
 }
 
@@ -275,6 +299,12 @@ transition-timing-function: ease-in-out;
         .cat-img{
 
             display: block!important;
+        }
+
+        .data-field{
+   
+             width: 100%!important;
+        
         }
                                                   
 }

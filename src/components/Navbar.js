@@ -21,44 +21,15 @@ const Navbar = ({ size, onSearch }) => {
     onSearch(searchQuery);
   };
 
-  /*
-  const [searchTerm, setSearchTerm] = useState("");
-
-  let [filteredProducts, setFilteredProducts] = useState([]);
-
-  const [found, setFound] = useState(false);
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-    console.log(searchTerm);
-  };
-
-  const handleInput = () => {
-    console.log("Search term:", searchTerm);
-
-    filteredProducts = topCategories.filter((product) =>
-      product.type.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    console.log(filteredProducts);
-    setFilteredProducts(filteredProducts);
-
-    if (filteredProducts.length === 0) {
-      setFound(false); // Set found as false if no products are found
-    } else {
-      setFound(true); // Set found as true if products are found
-    }
-  };*/
-
   return (
     <>
       <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid">
           <Link class="navbar-brand" href="#">
             <img
-              src="./images/w1.jpg"
+              src="./images/wood.png"
               alt="logo"
-              className="img-fluid"
+              className="img-fluid logo-img"
               style={{ height: "80px" }}
             />
           </Link>

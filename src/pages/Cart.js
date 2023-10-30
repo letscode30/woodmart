@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ cart, setCart }) => {
   const stock = 49;
   const [counts, setCounts] = useState({});
- 
+
+  const navigate = useNavigate();
+
   const setIncrement = (id) => {
     const currentCount = counts[id] || 0;
     if (currentCount < stock) {
@@ -22,22 +24,31 @@ const Cart = ({ cart, setCart }) => {
     }
   };
 
-   let grandTotal = 0;
+  //let grandTotal = 0;
+
+  let grandTotal = cart.reduce((total, item) => {
+    const subtotal = item.price * (counts[item.id] || 0);
+    return total + subtotal;
+  }, 0);
+
+  console.log(grandTotal);
 
   // Iterate through each item in the cart to calculate the grand total
-  cart.forEach((item) => {
+  /*cart.forEach((item) => {
     const subtotal = item.price * (counts[item.id] || 0);
     grandTotal += subtotal;
-  });
+  });*/
 
+  const handleRemove = (id) => {
+    const arr = cart.filter((item) => item.id !== id);
+    setCart(arr);
+    console.log(id);
+    console.log(arr);
+  };
 
-    const handleRemove = (id) =>{
-        const arr = cart.filter((item)=>item.id !== id);
-        setCart(arr);
-       console.log(id)
-       console.log(arr)
-    }
-
+  const handleCheckout = () => {
+    navigate("/checkout", { state: { data: grandTotal } });
+  };
 
   return (
     <div className="container mt-3 mb-2">
@@ -57,7 +68,13 @@ const Cart = ({ cart, setCart }) => {
             <tbody className="crt-table">
               {cart.map((item) => (
                 <tr key={item.id} className="text-center">
-                  <td className="p-3 table-data "><i class="fa fa-times" aria-hidden="true" onClick={()=>handleRemove(item.id)}></i></td>
+                  <td className="p-3 table-data ">
+                    <i
+                      class="fa fa-times"
+                      aria-hidden="true"
+                      onClick={() => handleRemove(item.id)}
+                    ></i>
+                  </td>
                   <td className="p-3 table-data">
                     <img
                       src={item.img}
@@ -102,7 +119,7 @@ const Cart = ({ cart, setCart }) => {
                     </div>
                   </td>
                   <td className="p-3 table-data">
-                    ${item.price * (counts[item.id] || 0) }
+                    ${item.price * (counts[item.id] || 0)}
                   </td>
                 </tr>
               ))}
@@ -110,37 +127,37 @@ const Cart = ({ cart, setCart }) => {
           </table>
         </div>
 
-
         <div className="col-lg-3 col-md-12 col-sm-12 bg-light mt-3  text-center">
-        
-         <h6 className="fw-bold mb-3">Cart Totals</h6>
+          <h6 className="fw-bold mb-3">Cart Totals</h6>
 
-           
-<table class="table mt-2">
-  
-  <tbody>
-    <tr className="">
-     
-      <td className="fw-bold  total">SubTotal</td>
-      <td></td>
-      <td>${grandTotal}</td>
-    </tr>
-    <tr>
-     
-      <td className="fw-bold total">Shipping</td>
-      <td></td>
-      <td className="total">Free Shipping</td>
-    </tr>
-    <tr>
-      
-      <td className="fw-bold total">Total</td>
-       <td></td>
-      <td style={{color: "#ED7D31", fontWeight:"bold"}} className="total">${grandTotal}</td>
-    </tr>
-  </tbody>
-</table>
+          <table class="table mt-2">
+            <tbody>
+              <tr className="">
+                <td className="fw-bold  total">SubTotal</td>
+                <td></td>
+                <td>${grandTotal}</td>
+              </tr>
+              <tr>
+                <td className="fw-bold total">Shipping</td>
+                <td></td>
+                <td className="total">Free Shipping</td>
+              </tr>
+              <tr>
+                <td className="fw-bold total">Total</td>
+                <td></td>
+                <td
+                  style={{ color: "#ED7D31", fontWeight: "bold" }}
+                  className="total"
+                >
+                  ${grandTotal}
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div>
-             <button className="cart-btn rounded-pill">Proceed to Checkout</button>
+            <button className="cart-btn rounded-pill" onClick={handleCheckout}>
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       </div>
@@ -149,5 +166,3 @@ const Cart = ({ cart, setCart }) => {
 };
 
 export default Cart;
-
-

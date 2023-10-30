@@ -1,0 +1,41 @@
+
+.checkout-box{
+
+   max-width : 800px;
+    min-height : 600px;
+   
+}
+
+.count-box{
+
+    width: 35px;
+    height: 35px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.data-field{
+
+width: 340px;
+}
+
+.progress{
+
+    background-color: rgb(237, 125, 49);
+}
+
+.progress-bar{
+
+    background-color: rgb(237, 125, 49);
+}
+
+.order-btn{
+
+   padding: 10px 210px 10px 210px;
+
+}
+    
+
+

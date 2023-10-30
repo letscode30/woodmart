@@ -5,7 +5,7 @@ export const topCategories = [
     img: "/images/p1.jpg",
     caption: "Belt",
     type: "Armchairs",
-    price: 680.0,
+    price: 680.23,
     desc: "The compact and well-proportioned silhouette of both the seats and the small sofa, opens up to a new way of using the dining space as a living room within the living room, a hybrid situation.",
     cart: "Add to cart",
     color: ["#6C5F5B", "#4F4A45", "#F6F1EE"],
@@ -23,7 +23,7 @@ export const topCategories = [
     img: "/images/p2.jpg",
     caption: "Albert",
     type: "Armchairs",
-    price: 1680.0,
+    price: 1680.45,
     desc: "The compact and well-proportioned silhouette of both the seats and the small sofa, opens up to a new way of using the dining space: as a living room within the living room, a hybrid situation.",
     cart: "Add to cart",
     pic: [
@@ -40,7 +40,7 @@ export const topCategories = [
     img: "/images/p3.jpg",
     caption: "Curve",
     type: "Chairs",
-    price: 320.0,
+    price: 320.67,
     desc: "Soft curves and tapering slender lines are inspired by modern design. The result is a classic yet contemporary chair, ideally combined with the table by the same name.",
     cart: "Add to cart",
 
@@ -76,7 +76,7 @@ export const topCategories = [
     img: "/images/p5.jpg",
     caption: "Palissade",
     type: "Sofas",
-    price: 1890.0,
+    price: 1890.299,
     desc: "The slender organic forms are fluid and graceful.Noguchi emphasises the lightness of the elements with thin yet comfortable upholstery and a choice of cover fabrics in natural colours",
     cart: "Add to cart",
 
@@ -94,7 +94,7 @@ export const topCategories = [
     img: "/images/p6.jpg",
     caption: "Can",
     type: "Sofas",
-    price: 2100.0,
+    price: 2100.56,
     desc: "The slender organic forms are fluid and graceful.Noguchi emphasises the lightness of the elements with thin yet comfortable upholstery and a choice of cover fabrics in natural colours",
     cart: "Add to cart",
     pic: [
@@ -128,7 +128,7 @@ export const topCategories = [
     img: "/images/p10.jpg",
     caption: "Aruda",
     type: "Tables",
-    price: 699.0,
+    price: 699.87,
     desc: "A new classic for the contemporary dining room, the Mondrian table reinterprets the light and elegant design of the sofa and coffee table collection of the same name.",
     cart: "Add to cart",
 

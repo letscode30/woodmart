@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import ProductSearch from "./components/ProductSearch";
 import { topCategories } from "./data";
+import CheckOut from "./pages/CheckOut";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -71,10 +72,7 @@ const App = () => {
           element={<ProductSearch filteredProducts={filteredProducts} />}
         />
 
-        {/* <Route
-          path="/ProductSearch/${filteredProducts}"
-          element={<ProductSearch />}
-        />*/}
+        <Route path="/checkout" element={<CheckOut cart={cart} />} />
       </Routes>
 
       <Footer />
